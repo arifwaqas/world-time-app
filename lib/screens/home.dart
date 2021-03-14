@@ -100,7 +100,12 @@ class _HomeState extends State<Home> {
               alignment: Alignment.center,
               margin: EdgeInsets.symmetric(horizontal: 40.0),
               child: TextButton(
-                onPressed: () {},
+                onPressed: () async {
+                  dynamic response2 = await Navigator.pushNamed(context, '/name');
+                  setState(() {
+                    name = response2['name'];
+                  });
+                },
                 child: Text('Change Name',
                   style: TextStyle(
                       color: Color(0xFF000000),
